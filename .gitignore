@@ -1,0 +1,17 @@
+# Credenciais e configurações locais
+.env
+.env.*
+!.env.example
+
+# Arquivos temporários
+*.tmp
+*.log
+
+# Python
+__pycache__/
+.venv/
+
+# Arquivos gerados pelo Xcelium
+xcelium.d/
+.simvision/
+waves.shm/
