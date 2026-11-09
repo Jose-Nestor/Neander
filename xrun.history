@@ -84,3 +84,23 @@ s41(09Nov2026:13:47:25):  xrun -64bit -sv -access +rwc -gui rtl/ula.sv tb/tb_ula
 s42(09Nov2026:13:51:11):  xrun -64bit -sv -access +rwc rtl/ula.sv tb/tb_ula.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
 #e43(09Nov2026:13:51:12): source ./xcelium.d/env.d/env.history.09Nov2026_13_51_12
 s43(09Nov2026:13:51:12):  xrun -64bit -sv -access +rwc -gui rtl/ula.sv tb/tb_ula.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e44(09Nov2026:14:25:48): source ./xcelium.d/env.d/env.history.09Nov2026_14_25_48
+s44(09Nov2026:14:25:48):  xrun -64bit -sv -access +rwc rtl/ula.sv tb/tb_ula.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e45(09Nov2026:14:26:20): source ./xcelium.d/env.d/env.history.09Nov2026_14_26_20
+s45(09Nov2026:14:26:20):  xrun -64bit -sv -access +rwc rtl/reg_nz.sv tb/tb_reg_nz.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e46(09Nov2026:14:27:00): source ./xcelium.d/env.d/env.history.09Nov2026_14_27_00
+s46(09Nov2026:14:27:00):  xrun -64bit -sv -access +rwc rtl/reg_nz.sv tb/tb_reg_nz.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e47(09Nov2026:14:28:47): source ./xcelium.d/env.d/env.history.09Nov2026_14_28_47
+s47(09Nov2026:14:28:47):  xrun -64bit -sv -access +rwc rtl/reg_nz.sv tb/tb_reg_nz.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e48(09Nov2026:14:29:22): source ./xcelium.d/env.d/env.history.09Nov2026_14_29_22
+s48(09Nov2026:14:29:22):  xrun -64bit -sv -access +rwc rtl/reg_nz.sv tb/tb_reg_nz.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e49(09Nov2026:14:29:30): source ./xcelium.d/env.d/env.history.09Nov2026_14_29_30
+s49(09Nov2026:14:29:30):  xrun -64bit -sv -access +rwc -gui rtl/reg_nz.sv tb/tb_reg_nz.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e50(09Nov2026:14:35:33): source ./xcelium.d/env.d/env.history.09Nov2026_14_35_33
+s50(09Nov2026:14:35:33):  xrun -64bit -sv -access +rwc rtl/reg_nz.sv tb/tb_reg_nz.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e51(09Nov2026:14:35:35): source ./xcelium.d/env.d/env.history.09Nov2026_14_35_35
+s51(09Nov2026:14:35:35):  xrun -64bit -sv -access +rwc -gui rtl/reg_nz.sv tb/tb_reg_nz.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e52(09Nov2026:14:41:57): source ./xcelium.d/env.d/env.history.09Nov2026_14_41_57
+s52(09Nov2026:14:41:57):  xrun -64bit -sv -access +rwc rtl/reg_nz.sv tb/tb_reg_nz.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e53(09Nov2026:14:41:59): source ./xcelium.d/env.d/env.history.09Nov2026_14_41_59
+s53(09Nov2026:14:41:59):  xrun -64bit -sv -access +rwc -gui rtl/reg_nz.sv tb/tb_reg_nz.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
