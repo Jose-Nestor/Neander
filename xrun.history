@@ -1,0 +1,4 @@
+#e1(09Nov2026:08:44:11): source ./xcelium.d/env.d/env.history.09Nov2026_08_44_11
+s1(09Nov2026:08:44:11):  xrun -64bit -sv -access +rwc rtl/reg8.sv tb/tb_reg8.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
+#e2(09Nov2026:08:44:21): source ./xcelium.d/env.d/env.history.09Nov2026_08_44_21
+s2(09Nov2026:08:44:21):  xrun -64bit -sv -access +rwc -gui rtl/reg8.sv tb/tb_reg8.sv -v lib/verilog/fast_vdd1v0_basicCells_hvt.v 
