@@ -9,6 +9,13 @@ TB    := $(word 2,$(ARGS))
 RTL_FILES = rtl/$(BLOCK).sv
 TB_FILES  = tb/$(TB).sv
 
+
+# Todos os módulos RTL e um testbench escolhido.
+# Uso: make run-all tb_datapath
+ALL_RTL_FILES := $(wildcard rtl/*.sv)
+ALL_TB       := $(word 1,$(ARGS))
+ALL_TB_FILE   = tb/$(ALL_TB).sv
+
 # Biblioteca de células
 LIB_FILE = lib/verilog/fast_vdd1v0_basicCells_hvt.v
 
@@ -30,12 +37,42 @@ LIB_FLAGS = $(if $(strip $(LIB_FILE)),-v "$(LIB_FILE)")
 XRUN_FILES = "$(RTL_FILES)" "$(TB_FILES)" $(LIB_FLAGS)
 
 
+# Por padrão, o módulo top tem o mesmo nome do testbench.
+TOP ?= $(notdir $(ALL_TB))
+
+.PHONY: check-all run-all gui-all
+
+check-all:
+	@test -n "$(ALL_TB)" || { \
+		echo "Uso: make run-all nome_do_testbench"; exit 1; }
+	@test -n "$(ALL_RTL_FILES)" || { \
+		echo "Erro: nenhum arquivo .sv encontrado em rtl/"; exit 1; }
+	@test -f "$(ALL_TB_FILE)" || { \
+		echo "Erro: arquivo $(ALL_TB_FILE) não encontrado"; exit 1; }
+
+run-all: check-all
+	$(XRUN) $(XRUN_FLAGS) \
+		$(ALL_RTL_FILES) \
+		"$(ALL_TB_FILE)" \
+		-top "$(TOP)" \
+		$(LIB_FLAGS)
+
+gui-all: check-all
+	$(XRUN) $(XRUN_FLAGS) -gui \
+		$(ALL_RTL_FILES) \
+		"$(ALL_TB_FILE)" \
+		-top "$(TOP)" \
+		$(LIB_FLAGS)
 
 
 .PHONY: help run
 
 help:
 	@echo "Uso: make run caminho_do_rtl caminho_do_tb"
+	@echo "make run bloco testbench       - Simula um bloco"
+	@echo "make gui bloco testbench       - Abre um bloco na GUI"
+	@echo "make run-all testbench         - Compila todos os RTL"
+	@echo "make gui-all testbench         - Compila todos os RTL na GUI"
 
 run:
 	$(XRUN) $(XRUN_FLAGS) $(XRUN_FILES)
