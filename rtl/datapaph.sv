@@ -16,12 +16,30 @@ module datapath(
 
     //rem
     input logic carga_rem,
-    output wire [7:0] out_rem
+    output wire [7:0] out_rem,
 
     //mem
     input logic read, write,
-    input logic [7:0] addr, data_in,
-    output logic [7:0] data_out
+    output logic [7:0] data_out,
+
+    //muxrdm
+    input logic sel_rdm,
+    output logic [7:0] out_mux_rdm,
+
+    //ULA
+    input logic [2:0] sel_ula,
+    output logic [7:0] out_ula,
+    output logic zero, negativo,
+
+    //Acumulador
+    input logic carga_ac,
+    output wire [7:0] out_ac,
+
+    //Registrador NZ
+    input logic carga_nz,
+    output logic negativo_out, zero_out
+
+
 );
 
     pc uu_pc(
@@ -52,7 +70,7 @@ module datapath(
         .clk(clk),
         .rst(rst),
         .carga(carga_rdm),
-        .in_reg(data_out),
+        .in_reg(out_mux_rdm),
         .out_reg(out_rdm)
     );
 
@@ -64,5 +82,40 @@ module datapath(
         .data_in(out_rdm),
         .data_out(data_out)
     );
+
+    mux8 uu_mux_rdm(
+        .a(in_rdm),
+        .b(data_out),
+        .sel(sel_rdm),
+        .out(out_mux_rdm)
+    );
+
+    reg8 uu_ac(
+        .clk(clk),
+        .rst(rst),
+        .carga(carga_ac),
+        .in_reg(out_ula),
+        .out_reg(out_ac)
+    );
+
+    ula uu_ula(
+        .x(out_ac),
+        .y(out_rdm),
+        .sel_ula(sel_ula),
+        .resultado(out_ula),
+        .zero(zero),
+        .negativo(negativo)
+    );
+
+    reg_nz uu_reg_nz(
+        .clk(clk),
+        .rst(rst),
+        .carga(carga_nz),
+        .negativo_in(negativo),
+        .zero_in(zero),
+        .negativo_out(negativo_out),
+        .zero_out(zero_out)
+    );
+
 
 endmodule
