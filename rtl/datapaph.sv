@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module datapath(
     input logic clk, rst,
 
@@ -37,8 +39,11 @@ module datapath(
 
     //Registrador NZ
     input logic carga_nz,
-    output logic negativo_out, zero_out
+    output logic negativo_out, zero_out,
 
+    //RI
+    input logic carga_ri,
+    output logic [7:0] out_ri
 
 );
 
@@ -117,5 +122,12 @@ module datapath(
         .zero_out(zero_out)
     );
 
+    reg8 ri (
+        .clk   (clk),
+        .rst   (rst),
+        .carga (carga_ri),
+        .in_reg (out_rdm),
+        .out_reg (out_ri)
+    );
 
 endmodule

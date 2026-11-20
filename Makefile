@@ -51,14 +51,14 @@ check-all:
 		echo "Erro: arquivo $(ALL_TB_FILE) não encontrado"; exit 1; }
 
 run-all: check-all
-	$(XRUN) $(XRUN_FLAGS) \
+	$(XRUN) $(XRUN_FLAGS) -timescale 1ns/1ps \
 		$(ALL_RTL_FILES) \
 		"$(ALL_TB_FILE)" \
 		-top "$(TOP)" \
 		$(LIB_FLAGS)
 
 gui-all: check-all
-	$(XRUN) $(XRUN_FLAGS) -gui \
+	$(XRUN) $(XRUN_FLAGS) -gui -timescale 1ns/1ps \
 		$(ALL_RTL_FILES) \
 		"$(ALL_TB_FILE)" \
 		-top "$(TOP)" \
