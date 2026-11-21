@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_sub_matrizes_bram_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_sub_matrizes_bram" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="4,981.109 ns"></ZoomStartTime>
+      <ZoomEndTime time="5,931.244 ns"></ZoomEndTime>
+      <Cursor1Time time="5,399.813 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="232"></NameColumnWidth>
+      <ValueColumnWidth column_width="96"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="8" />
+   <wvobject type="logic" fp_name="/tb_sub_matrizes_bram/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_sub_matrizes_bram/write">
+      <obj_property name="ElementShortName">write</obj_property>
+      <obj_property name="ObjectShortName">write</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sub_matrizes_bram/out_ri">
+      <obj_property name="ElementShortName">out_ri[7:0]</obj_property>
+      <obj_property name="ObjectShortName">out_ri[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sub_matrizes_bram/out_ac">
+      <obj_property name="ElementShortName">out_ac[7:0]</obj_property>
+      <obj_property name="ObjectShortName">out_ac[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sub_matrizes_bram/out_rem">
+      <obj_property name="ElementShortName">out_rem[7:0]</obj_property>
+      <obj_property name="ObjectShortName">out_rem[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sub_matrizes_bram/out_rdm">
+      <obj_property name="ElementShortName">out_rdm[7:0]</obj_property>
+      <obj_property name="ObjectShortName">out_rdm[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sub_matrizes_bram/instrucoes">
+      <obj_property name="ElementShortName">instrucoes[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instrucoes[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_sub_matrizes_bram/escritas">
+      <obj_property name="ElementShortName">escritas[31:0]</obj_property>
+      <obj_property name="ObjectShortName">escritas[31:0]</obj_property>
+   </wvobject>
+</wave_config>
