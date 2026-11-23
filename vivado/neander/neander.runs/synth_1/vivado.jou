@@ -3,8 +3,8 @@
 # SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
 # IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
 # SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
-# Start of session at: Sat Nov 21 12:36:01 2026
-# Process ID         : 516442
+# Start of session at: Sun Nov 22 18:19:40 2026
+# Process ID         : 45382
 # Current directory  : /home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.runs/synth_1
 # Command line       : vivado -log neander.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source neander.tcl
 # Log file           : /home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.runs/synth_1/neander.vds
@@ -19,6 +19,6 @@
 # Host memory        : 33376 MB
 # Swap memory        : 17179 MB
 # Total Virtual      : 50556 MB
-# Available Virtual  : 41702 MB
+# Available Virtual  : 42191 MB
 #-----------------------------------------------------------
 source neander.tcl -notrace

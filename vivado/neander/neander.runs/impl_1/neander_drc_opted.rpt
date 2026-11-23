@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2026.1 (lin64) Build 6511674 Tue Jun 16 11:01:26 MDT 2026
-| Date         : Sat Nov 21 12:40:37 2026
+| Date         : Sun Nov 22 18:20:19 2026
 | Host         : lad-18 running 64-bit Rocky Linux release 8.10 (Green Obsidian)
 | Command      : report_drc -file neander_drc_opted.rpt -pb neander_drc_opted.pb -rpx neander_drc_opted.rpx
 | Design       : neander

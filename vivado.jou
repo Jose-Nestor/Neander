@@ -1,0 +1,155 @@
+#-----------------------------------------------------------
+# Vivado v2026.1 (64-bit)
+# SW Build 6511674 on Tue Jun 16 11:01:26 MDT 2026
+# IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+# SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+# Start of session at: Sun Nov 22 17:34:28 2026
+# Process ID         : 9081
+# Current directory  : /home/aluno/Documents/atividades/intro hdl/neander
+# Command line       : vivado
+# Log file           : /home/aluno/Documents/atividades/intro hdl/neander/vivado.log
+# Journal file       : /home/aluno/Documents/atividades/intro hdl/neander/vivado.jou
+# Running On         : lad-18
+# Platform           : Rocky
+# Operating System   : Rocky Linux release 8.10 (Green Obsidian)
+# Processor Detail   : Intel(R) Core(TM) i5-14500
+# CPU Frequency      : 4407.929 MHz
+# CPU Physical cores : 14
+# CPU Logical cores  : 20
+# Host memory        : 33376 MB
+# Swap memory        : 17179 MB
+# Total Virtual      : 50556 MB
+# Available Virtual  : 45447 MB
+#-----------------------------------------------------------
+start_gui
+open_project {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.xpr}
+update_compile_order -fileset sources_1
+set sim [file join [get_property DIRECTORY [current_project]] neander.sim sim_1]
+set tb tb_multiplicacao_bram
+open_wave_database [file join $sim behav xsim ${tb}_behav.wdb]
+create_wave_config
+add_wave /$tb/clk /$tb/rst /$tb/write
+add_wave -radix hex /$tb/out_rem /$tb/out_rdm /$tb/produto
+add_wave -radix unsigned /$tb/somas
+add_wave /$tb/parado
+run
+run all
+set_property top tb_multiplicacao_bram [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation -simset sim_1 -mode behavioral
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/reports/tb_sub_matrizes_bram_behav.wcfg}
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/multiplicacao.wcfg}
+source tb_multiplicacao_bram.tcl
+set_property CONFIG.Coe_File {/home/aluno/Documents/atividades/intro hdl/neander/multiplicacao.coe} [get_ips bram_neander]
+generate_target all [get_files  {{/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.srcs/sources_1/ip/bram_neander/bram_neander.xci}}]
+catch { config_ip_cache -export [get_ips -all bram_neander] }
+export_ip_user_files -of_objects [get_files {{/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.srcs/sources_1/ip/bram_neander/bram_neander.xci}}] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.srcs/sources_1/ip/bram_neander/bram_neander.xci}}]
+export_simulation -lib_map_path [list {modelsim=/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.cache/compile_simlib/modelsim} {questa=/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.cache/compile_simlib/questa} {xcelium=/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.cache/compile_simlib/xcelium} {vcs=/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.cache/compile_simlib/vcs} {riviera=/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.cache/compile_simlib/riviera}] -of_objects [get_files {{/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.srcs/sources_1/ip/bram_neander/bram_neander.xci}}] -directory {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.ip_user_files/sim_scripts} -ip_user_files_dir {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.ip_user_files} -ipstatic_source_dir {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.ip_user_files/ipstatic} -use_ip_compiled_libs -force -quiet
+set_property top tb_multiplicacao_bram [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation -simset sim_1 -mode behavioral
+close_sim
+set_property top tb_multiplicacao_bram [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation -simset sim_1 -mode behavioral
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/reports/tb_sub_matrizes_bram_behav.wcfg}
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/multiplicacao.wcfg}
+source tb_multiplicacao_bram.tcl
+run all
+set_property top tb_multiplicacao_bram [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation -simset sim_1 -mode behavioral
+close_sim
+set tb tb_multiplicacao_bram
+open_wave_database [file join $sim impl timing xsim ${tb}_time_impl.wdb]
+create_wave_config
+add_wave /$tb/clk /$tb/rst /$tb/write
+add_wave -radix hex /$tb/out_ri /$tb/out_rem /$tb/out_rdm /$tb/produto
+add_wave -radix unsigned /$tb/somas
+add_wave /$tb/parado
+# Com atraso, após o roteamento
+set_property top $tb [get_filesets sim_1]
+launch_simulation -mode post-implementation -type timing
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/reports/tb_sub_matrizes_bram_behav.wcfg}
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/multiplicacao.wcfg}
+source tb_multiplicacao_bram.tcl
+run all
+close_sim
+set tb tb_multiplicacao_bram
+open_wave_database [file join $sim impl timing xsim ${tb}_time_impl.wdb]
+create_wave_config
+add_wave /$tb/clk /$tb/rst /$tb/write
+add_wave -radix hex /$tb/out_ri /$tb/out_rem /$tb/out_rdm /$tb/produto
+add_wave -radix unsigned /$tb/somas
+add_wave /$tb/parado
+close_sim
+# Com atraso, após o roteamento
+set_property top $tb [get_filesets sim_1]
+launch_simulation -mode post-implementation -type timing
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/reports/tb_sub_matrizes_bram_behav.wcfg}
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/multiplicacao.wcfg}
+source tb_multiplicacao_bram.tcl
+run all
+get_value -radix hex /tb_multiplicacao_bram/out_pc
+get_value -radix hex /tb_multiplicacao_bram/out_ac
+close_sim
+current_sim simulation_6
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+reset_run impl_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+refresh_design
+set_property top tb_multiplicacao_bram [get_filesets sim_1]
+launch_simulation -simset sim_1 -mode post-implementation -type timing
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/reports/tb_sub_matrizes_bram_behav.wcfg}
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/multiplicacao.wcfg}
+source tb_multiplicacao_bram.tcl
+run all
+set_property CONFIG.Coe_File {/home/aluno/Documents/atividades/intro hdl/neander/sub_matrizes.coe} [get_ips bram_neander]
+generate_target all [get_files  {{/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.srcs/sources_1/ip/bram_neander/bram_neander.xci}}]
+catch { config_ip_cache -export [get_ips -all bram_neander] }
+export_ip_user_files -of_objects [get_files {{/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.srcs/sources_1/ip/bram_neander/bram_neander.xci}}] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.srcs/sources_1/ip/bram_neander/bram_neander.xci}}]
+export_simulation -lib_map_path [list {modelsim=/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.cache/compile_simlib/modelsim} {questa=/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.cache/compile_simlib/questa} {xcelium=/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.cache/compile_simlib/xcelium} {vcs=/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.cache/compile_simlib/vcs} {riviera=/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.cache/compile_simlib/riviera}] -of_objects [get_files {{/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.srcs/sources_1/ip/bram_neander/bram_neander.xci}}] -directory {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.ip_user_files/sim_scripts} -ip_user_files_dir {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.ip_user_files} -ipstatic_source_dir {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/neander.ip_user_files/ipstatic} -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top tb_sub_matrizes_bram [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+refresh_design
+launch_simulation -mode post-implementation -type timing
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/reports/tb_sub_matrizes_bram_behav.wcfg}
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/multiplicacao.wcfg}
+source tb_sub_matrizes_bram.tcl
+current_wave_config {multiplicacao.wcfg}
+add_wave {{/tb_sub_matrizes_bram/clk}} {{/tb_sub_matrizes_bram/out_ri}} {{/tb_sub_matrizes_bram/out_ac}} {{/tb_sub_matrizes_bram/out_rem}} {{/tb_sub_matrizes_bram/out_rdm}} {{/tb_sub_matrizes_bram/write}} {{/tb_sub_matrizes_bram/parado}} {{/tb_sub_matrizes_bram/escritas}} 
+restart
+run all
+restart
+run all
+close_sim
+launch_simulation -mode post-implementation -type timing
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/reports/tb_sub_matrizes_bram_behav.wcfg}
+open_wave_config {/home/aluno/Documents/atividades/intro hdl/neander/vivado/neander/multiplicacao.wcfg}
+source tb_sub_matrizes_bram.tcl
+current_wave_config {}
+add_wave {{/tb_sub_matrizes_bram/out_ri}} {{/tb_sub_matrizes_bram/out_ac}} {{/tb_sub_matrizes_bram/out_rem}} {{/tb_sub_matrizes_bram/out_rdm}} {{/tb_sub_matrizes_bram/write}} {{/tb_sub_matrizes_bram/parado}} {{/tb_sub_matrizes_bram/escritas}} 
+restart
+run all
+close_sim
+current_sim simulation_8
+close_sim
+current_sim simulation_6
+close_sim
+current_sim simulation_4
+close_sim
+close_sim
